@@ -1,6 +1,6 @@
 import { markdownToHTML } from './markdownToHTML';
 
-export default function createHTML(markdownContent) {
+export default function createHTML(markdownContent: string): string {
 	return `
       <!DOCTYPE html>
       <html lang="en">

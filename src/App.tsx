@@ -13,11 +13,11 @@ export default function App() {
 	const [markdownContent, setMarkdownContent] = useState(getCodeFromLocalStorage());
 	const [theme, setTheme] = useState(getThemeFromLocalStorage());
 
-	function handleChange(value) {
+	function handleChange(value: string) {
 		setMarkdownContent(value);
 		saveCodeToLocalStorage(value);
 	}
-	const handleChangeTheme = (prop, value) => {
+	const handleChangeTheme = (prop: string, value: string) => {
 		setTheme({ ...theme, [prop]: value });
 		saveThemeToLocalStorage(prop, value);
 	};
@@ -25,8 +25,8 @@ export default function App() {
 		<>
 			<h5 className="m-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Markdown previewer</h5>
 			<section className="flex items-center mb-3">
-				<Selector currentValue={theme.name} handleChange={(e) => handleChangeTheme('name', e.target.value)} optionList={THEMES} label={'Theme'} />
-				<Selector currentValue={theme.fontSize} handleChange={(e) => handleChangeTheme('fontSize', e.target.value)} optionList={FONT_SIZES} label={'Font size'} />
+				<Selector currentValue={theme.name} handleChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleChangeTheme('name', e.target.value)} optionList={THEMES} label={'Theme'} />
+				<Selector currentValue={theme.fontSize} handleChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleChangeTheme('fontSize', e.target.value)} optionList={FONT_SIZES} label={'Font size'} />
 				<SaveAsButton markdownContent={markdownContent} />
 			</section>
 			<section className="flex">
