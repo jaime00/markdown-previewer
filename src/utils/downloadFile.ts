@@ -1,3 +1,5 @@
+import { HTML_FORMAT, MARKDOWN_FORMAT } from '../constants/format';
+
 function createBlob(content: string, mimeType: string): Blob {
 	return new Blob([content], { type: mimeType });
 }
@@ -17,8 +19,8 @@ function triggerDownload(anchor: HTMLAnchorElement): void {
 
 function getFileExtension(type: string): string {
 	const extensions: { [key: string]: string } = {
-		html: 'html',
-		markdown: 'md',
+		html: HTML_FORMAT,
+		markdown: MARKDOWN_FORMAT,
 	};
 	return extensions[type] || type;
 }

@@ -6,7 +6,6 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 	margin: 0;
 	padding: 0;
-	background-color: #f3f4f6;
 }
 
 * {
@@ -16,21 +15,4 @@ body {
 *::before,
 *::after {
 	box-sizing: inherit;
-}
-
-.box {
-	border: 1px solid #ccc;
-	overflow: hidden; /* Para que el contenido no se desborde al redimensionar */
-	position: relative;
-}
-
-/* Estilo del control de redimensionamiento */
-.react-resizable-handle {
-	position: absolute;
-	top: 0;
-	right: -5px; /* Ajusta la posición del control de redimensionamiento */
-	width: 10px; /* Ancho del control de redimensionamiento */
-	height: 100%;
-	cursor: col-resize; /* Cursor de redimensionamiento horizontal */
-	background-color: #999; /* Color del control de redimensionamiento */
 }

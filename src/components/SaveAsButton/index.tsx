@@ -1,16 +1,18 @@
 import { Dropdown } from 'flowbite-react';
 import downloadFile from '../../utils/downloadFile';
-import { markdownToHTML } from '../../utils/markdownToHTML';
 import { BsFiletypeHtml, BsFillMarkdownFill } from 'react-icons/bs';
+import { backgroundColorWhenIsDarkMode } from '../../constants/dark-mode';
+import { getHTMLContent } from '../../utils/getHTMLContent';
 
-export default function SaveAsButton({ markdownContent }: SaveAsButtonProps) {
+export default function SaveAsButton({ markdownContent, isDarkMode }: SaveAsButtonProps) {
 	const handleClick = (type: string) => {
-		const htmlContent = type === 'html' ? markdownToHTML(markdownContent) : markdownContent;
+		const htmlContent = getHTMLContent(type, markdownContent);
 		downloadFile(htmlContent, type);
 	};
+	const background = backgroundColorWhenIsDarkMode(isDarkMode);
 	return (
 		<div className="ml-auto mr-2">
-			<Dropdown label="Save as" style={{ background: 'rgb(55 56 55 / 87%)' }} dismissOnClick={false} arrowIcon={false} size="sm">
+			<Dropdown label="Save as" style={{ background }} dismissOnClick={true} arrowIcon={false} size="sm">
 				<Dropdown.Item icon={BsFillMarkdownFill} onClick={() => handleClick('markdown')}>
 					Markdown <code>(.md)</code>
 				</Dropdown.Item>
@@ -24,4 +26,5 @@ export default function SaveAsButton({ markdownContent }: SaveAsButtonProps) {
 
 type SaveAsButtonProps = Readonly<{
 	markdownContent: string;
+	isDarkMode: boolean;
 }>;
