@@ -12,10 +12,10 @@ export default function SaveAsButton({ markdownContent }: SaveAsButtonProps) {
 		<div className="ml-auto mr-2">
 			<Dropdown label="Save as" style={{ background: 'rgb(55 56 55 / 87%)' }} dismissOnClick={false} arrowIcon={false} size="sm">
 				<Dropdown.Item icon={BsFillMarkdownFill} onClick={() => handleClick('markdown')}>
-					Markdown (.mk)
+					Markdown <code>(.md)</code>
 				</Dropdown.Item>
 				<Dropdown.Item icon={BsFiletypeHtml} onClick={() => handleClick('html')}>
-					HTML (.html)
+					HTML <code>(.html)</code>
 				</Dropdown.Item>
 			</Dropdown>
 		</div>

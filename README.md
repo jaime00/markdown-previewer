@@ -20,7 +20,7 @@
 -   Custom CSS.
 -   Tailwind CSS.
 -   Flowbite React.
--   JavaScript.
+-   Typescript.
 -   Marked JS.
 -   Code Mirror React.
 
