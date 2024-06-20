@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+	box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*::before,
+*::after {
+	box-sizing: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.box {
+	border: 1px solid #ccc;
+	overflow: hidden; /* Para que el contenido no se desborde al redimensionar */
+	position: relative;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilo del control de redimensionamiento */
+.react-resizable-handle {
+	position: absolute;
+	top: 0;
+	right: -5px; /* Ajusta la posición del control de redimensionamiento */
+	width: 10px; /* Ancho del control de redimensionamiento */
+	height: 100%;
+	cursor: col-resize; /* Cursor de redimensionamiento horizontal */
+	background-color: #999; /* Color del control de redimensionamiento */
 }
