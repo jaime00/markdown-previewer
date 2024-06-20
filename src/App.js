@@ -21,7 +21,6 @@ export default function App() {
 		setTheme({ ...theme, [prop]: value });
 		saveThemeToLocalStorage(prop, value);
 	};
-
 	return (
 		<>
 			<h5 className="m-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Markdown previewer</h5>

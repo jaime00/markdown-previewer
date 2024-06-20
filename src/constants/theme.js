@@ -9,19 +9,6 @@ import { tokyoNight } from '@uiw/codemirror-theme-tokyo-night';
 import { tokyoNightDay } from '@uiw/codemirror-theme-tokyo-night-day';
 import { red } from '@uiw/codemirror-theme-red';
 
-// ayudame a importar esto
-/*
-uiw/codemirror-theme-abcdef
-uiw/codemirror-theme-vscode
-uiw/codemirror-theme-vscode
-uiw/codemirror-theme-xcode
-uiw/codemirror-theme-xcode
-uiw/codemirror-theme-tokyo-night
-uiw/codemirror-theme-tokyo-night-day
-uiw/codemirror-theme-red
-
-*/
-
 export const MONOKAI = {
 	name: 'Monokai',
 	value: 'monokai',
